@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 4000
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://Jzero:qwer1234!@cluster0.vzr4q0c.mongodb.net/?retryWrites=true&w=majority', {})
@@ -77,6 +77,9 @@ app.get('/api/users/logout', auth, (req, res) => {
         })
 })
 
+app.get('api/hello', (req, res) => {
+    res.send('안녕하세요!')
+})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
